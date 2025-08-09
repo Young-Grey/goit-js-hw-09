@@ -30,3 +30,17 @@ main {
 main:has(.back-link) {
   text-align: center;
 }
+
+.main-list{
+  display: block;
+  margin: 10px auto;
+  width: 50%;
+
+  font-size: 24px;
+  font-weight: 700;
+  color: cornflowerblue;
+}
+
+.main-list li:hover {
+  cursor: pointer;
+}
