@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery</title>
-    <script type="module" crossorigin src="/goit-js-hw-09/assets/main-8fmNRC18.js"></script>
-    <link rel="stylesheet" crossorigin href="/goit-js-hw-09/assets/styles-CK40piDP.css">
+    <script type="module" crossorigin src="/goit-js-hw-09/1-gallery.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-09/assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-09/assets/vendor-SQfqkzzt.js">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-09/assets/vendor-BWwTfcOd.css">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-09/assets/styles-Bxp0GKSJ.css">
   </head>
   <body>
     <header class="header">
@@ -19,10 +22,13 @@
       </a>
       <ul class="nav-list">
         <li class="nav-item">
-          <a class="nav-link active" href="./page-2.html">Page 2</a>
+          <a class="nav-link {=$highlight-curr}" href="../index.html">Main Page</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
+          <a class="nav-link active" href="../1-gallery.html">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {=$highlight-curr}" href="../2-form.html">Form</a>
         </li>
       </ul>
     </nav>
@@ -32,31 +38,15 @@
 
     <main>
       <div class="container">
+        <a class="back-link" href="./index.html">Go back</a>
+
         <h1 class="main-title">
           <span class="main-title-gradient">Gallery</span>
         </h1>
         <ul class="gallery"></ul>
-        <a class="back-link" href="./index.html">Go back</a>
 
       </div>
     </main>
 
-    <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
-      </a>
-    </p>
-  </div>
-</footer>
-
-    <script async src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
   </body>
 </html>
