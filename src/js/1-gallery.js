@@ -1,3 +1,8 @@
+// Описаний в документації
+import SimpleLightbox from "simplelightbox";
+// Додатковий імпорт стилів
+import "simplelightbox/dist/simple-lightbox.min.css";
+
 const images = [
   {
     preview:
@@ -64,19 +69,6 @@ const images = [
   },
 ];
 
-
-function modalImage(title, imgSrc){
-
-    const instance = basicLightbox.create(`
-    <h1 class="imgDesc">${title}</h1>
-    <div class="imgModalCont">
-        <img class="imgModal" src="${imgSrc}" width="1024" height="768">
-    </div>
-`);
-    instance.show();
-}
-
-
 const imgDescription = document.querySelector('.imgDesc');
 
 const myGalleryUl= document.querySelector('.gallery');
@@ -87,7 +79,6 @@ const imageTemplate = image => {
              <img
                 class="gallery-image"
                 src=${image.preview}
-                data-source=${image.original}
                 alt="${image.description}"
              />
              </a>
@@ -102,13 +93,15 @@ const myGallery = imagesTemplate(images);
 
 myGalleryUl.insertAdjacentHTML('afterbegin', myGallery);
 
-myGalleryUl.addEventListener("click", e => {
-    e.preventDefault();
-     if (e.target.nodeName !== "IMG"){
-        console.log("Get in the picture!");
-     }else{
-        const imgSrc = e.target.dataset.source;
-        const title = e.target.getAttribute('alt');
-        modalImage(title, imgSrc);
-    }
+let gallery = new SimpleLightbox('.gallery a', {
+            captions: true,
+            captionSelector: 'img',
+            captionType: 'attr',
+            captionsData: 'alt',
+            captionPosition: 'bottom',
+            captionDelay: 250
+});
+
+gallery.on('show.simplelightbox', function () {
+	// Do something…
 });
