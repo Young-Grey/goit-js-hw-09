@@ -29,7 +29,7 @@ elemForm.addEventListener("submit", e => {
         const instance = basicLightbox.create(`<h1 style="color: #fff">Fill please all fields</h1>`);
         instance.show();
     }else{   
-    
+        console.log(formData);
         localStorage.removeItem("feedback-form-state");
         elemInput.value = "";
         elemTextarea.value = "";
